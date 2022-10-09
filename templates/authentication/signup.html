@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    {% for message in messages %}
+    <div
+      class="alert alert-{{ message.tags }} alert-dismissible fade show"
+      rolse="alert"
+    >
+      <strong>Message:</strong> {{ message }}
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endfor %}
+
+    <h3>Sign Up</h3>
+    <form action="/signup" method="post">
+      {% csrf_token %}
+      <label for="">Username</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Create a username (only letters and numbers)"
+        required
+      />
+      <br />
+      <label for="">First Name</label>
+      <input
+        type="text"
+        id="fname"
+        name="fname"
+        placeholder="Enter your first name"
+        required
+      />
+      <br />
+      <label for="">Last Name</label>
+      <input
+        type="text"
+        id="lname"
+        name="lname"
+        placeholder="Enter your last name"
+        required
+      />
+      <br />
+      <label for="">Email Address</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter your email address"
+        required
+      />
+      <br />
+      <label for="">Password</label>
+      <input
+        type="password"
+        id="pass1"
+        name="pass1"
+        placeholder="Create a password"
+        required
+      />
+      <br />
+      <label for="">Password Confirm</label>
+      <input
+        type="password"
+        id="pass2"
+        name="pass2"
+        placeholder="Confirm your password"
+        required
+      />
+      <br />
+      <button type="submit">Sign Up</button>
+    </form>
+  </body>
+</html>

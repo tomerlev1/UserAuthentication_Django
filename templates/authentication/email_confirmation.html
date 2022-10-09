@@ -1,0 +1,5 @@
+Welcome to django Login.
+Hello {{name|safe}}!
+Please confirm your email by
+clicking on the following link.
+ Confirmation Link: http://{{domain|safe}}{% url "activate" uid token %}
